@@ -1,0 +1,14 @@
+<ion-content class="home">
+    <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
+
+    <div id=header>
+        <img src="assets/img/SANUYA.png" width="50px">
+    </div>
+    <strong>Gerer efficacement vos dechets?</strong>
+    <p>SANUY@ est tout au sujet de la gestion des dechets. Ici vous pourrez contacter vos fournisseurs les plus proches
+        <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"></a>
+    </p>
+    <form #formDonnee="ngForm" (ngSubmit)="loginUser(formDonnee)">
+        <ion-button color="success" expand="block" routerLink="/registre">Commencer</ion-button>
+    </form>
+</ion-content>

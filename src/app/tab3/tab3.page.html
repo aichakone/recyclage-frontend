@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Tab 3
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<ion-content>
+    <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
+    <button class="btn"><i class="fa fa-arrow-left"></i> Retour</button>
+    <p class="btnn">Profile</p>
+    <div class="edi">
+        <button class="btn"><i class="fa fa-edit"></i> </button>
+    </div>
+    <ionic-col text-center>
+        <img src="assets/img/user.png" width="50px" class="use">
+    </ionic-col>
+    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
+        <ion-list>
+            <ion-item>
+                <ion-label>Nom </ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username" autofocus=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Prenom</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Adresse Email</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Adresse</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Mes annonces</ion-button>
+        <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Deconnexion</ion-button>
+    </form>
+</ion-content>

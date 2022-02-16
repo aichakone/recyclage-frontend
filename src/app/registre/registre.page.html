@@ -1,0 +1,37 @@
+<ion-content class="regi">
+    <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
+    <strong>Bienvenue sur SANUY@</strong>
+    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
+        <ion-list>
+            <ion-item>
+                <ion-label>Nom utilisateur</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Prenom utilisateur</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input type="email" placeholder="Adresse email" ngModel name="usermail"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label color="">Mot de passe</ion-label>
+                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label color="">Votre localisation</ion-label>
+                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button color="success" expand="block" shape="" routerLink="/password">Inscription</ion-button>
+    </form>
+</ion-content>
