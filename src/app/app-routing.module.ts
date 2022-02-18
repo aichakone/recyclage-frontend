@@ -22,6 +22,11 @@ const routes: Routes = [
     path: 'oubliepass',
     loadChildren: () => import('./oubliepass/oubliepass.module').then( m => m.OubliepassPageModule)
   },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  
   
   
   

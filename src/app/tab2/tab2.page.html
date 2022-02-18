@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <ion-content>
-    <!-- <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
+    <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
     <button class="btn"><i class="fa fa-arrow-left"></i> Retour</button>
     <strong class="btnn">Ajouter une annonce</strong>
     <p>Photo du dechet</p>
@@ -16,7 +16,7 @@
         <button class="btn"><i class="fa fa-edit"></i> </button>
     </div>
     <ion-label>Choisir un fichier</ion-label>
-    <ion-input type="text" placeholder="photo-annonce.jpg" ngModel name="photo-annonce.jpg"></ion-input> -->
+    <ion-input type="text" placeholder="photo-annonce.jpg" ngModel name="photo-annonce.jpg"></ion-input>
 
     <form [formGroup]="annonce" (ngSubmit)="submitForm()" novalidate>
         <ion-item lines="none">
@@ -35,45 +35,35 @@
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl.geolocalisation.errors?.required">
         geolocalisation est obligatoire.
       </span>
+
+        <ion-item style="margin-top: 5px;">
+            <ion-label>Categorie</ion-label>
+            <ion-select class="custom-options" formControlName="categorie">
+                <ion-select-option *ngFor="let categorie of listeCategorie" value="{{categorie.idcat}}">{{categorie.type}}</ion-select-option>
+
+            </ion-select>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.categorie.errors?.required">
+            Selectionner une categorie?
+            </span>
+        <ion-item style="margin-top: 5px;">
+            <ion-label>Etat</ion-label>
+            <ion-select class="custom-options" formControlName="Etat">
+                <ion-select-option value="Activer">activer</ion-select-option>
+                <ion-select-option value="Desactiver">desactiver</ion-select-option>
+
+            </ion-select>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.Etat.errors?.required">
+            Selectionner un etat?
+            </span>
         <ion-row>
             <ion-col>
                 <ion-button fill="clear" type="submit" expand="block">Valider</ion-button>
             </ion-col>
 
         </ion-row>
-        <ion-item style="margin-top: 5px;">
-            <ion-label>Categorie</ion-label>
-            <ion-select class="custom-options" formControlName="categorie">
-                <ion-select-option value="Categorie">dechet plastique</ion-select-option>
-                <ion-select-option value="categorie">dechet plastique</ion-select-option>
-                <ion-select-option value="categorie">dechet plastique</ion-select-option>
-                <ion-select-option value="categorie">dechet plastique</ion-select-option>
-            </ion-select>
-        </ion-item>
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.profils.errors?.required">
-          Vous etes donneur ou patient?
-          </span>
+
     </form>
-    <!-- <form [formGroup]="annonce" (ngSubmit)="submitForm(form)">
-            <p class="titre">Description</p>
-            <div id="message">
-                <textarea FormControlName="description" rows="5" cols="30"></textarea>
-                <span class="error" *ngIf="isSubmitted && errorControl.description.errors?.required">
-               description obligatoire.
-            </span>
-                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.description.errors?.minlength">
-               Minimum 2 caracteres.
-            </span>
-            </div>
-            <p class="titre">Localisation</p>
-            <div id="message">
-                <textarea FormControlName="geolocalisation" rows="1" cols="30"></textarea>
-            </div>
-            <p id="buttons">
-                <input type="submit" value="Ajouter" />
-                <input type="reset" value="Annuler" />
-                <button type="submit">Ajouter</button>
-            </p>
-    </form> -->
 
 </ion-content>

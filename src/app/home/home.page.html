@@ -8,7 +8,10 @@
     <p>SANUY@ est tout au sujet de la gestion des dechets. Ici vous pourrez contacter vos fournisseurs les plus proches
         <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"></a>
     </p>
+    <ul *ngFor="let data of categorie">
+        <li>{{data.type}}</li>
+    </ul>
     <form #formDonnee="ngForm" (ngSubmit)="loginUser(formDonnee)">
-        <ion-button color="success" expand="block" routerLink="/registre">Commencer</ion-button>
+        <ion-button color="success" expand="block" routerLink="/password">Commencer</ion-button>
     </form>
 </ion-content>

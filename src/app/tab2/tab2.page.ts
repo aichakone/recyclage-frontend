@@ -9,6 +9,7 @@ import { ServiceService } from '../annonce/service.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  listeCategorie: any
   annonce:any
   isSubmitted: boolean = false
 
@@ -19,22 +20,33 @@ export class Tab2Page {
   {}
 
 ngOnInit(): void {
+  this.listerCategorie();
   this.annonce = this.formBuilder.group({
     description:['', [Validators.required, Validators.minLength(2)]],
     geolocalisation:['', [Validators.required, Validators.minLength(2)]],
-    categorie: ['', Validators.required]
+    categorie: ['', Validators.required],
+    Etat: ['', Validators.required]
   })
 }
 get errorControl() {
   return this.annonce.controls; 
 }
 submitForm(form:NgForm) {
+  var obj: { [id: string]: any} = {};
+
+    obj.id = this.annonce.value.categorie; 
+    this.annonce.value.categorie = obj;
   console.log(this.annonce)
   this.isSubmitted = true;
   if(this.annonce.value){
     this.service.ajoutAnnonce(this.annonce.value).subscribe((res)=>{
-      return this.router.navigateByUrl('/tab3')
+      return this.router.navigateByUrl('/home')
     })
   }
 }
-}
+listerCategorie(){
+  this.service.getAllcategorie().subscribe((data)=>{
+    console.log(data);
+    return this.listeCategorie=data;
+  })
+}}

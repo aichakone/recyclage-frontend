@@ -14,4 +14,7 @@ export class ServiceService {
   listerAnnonce(data:any){
     return this.http.get(this.url+'/annonce/listerannonce')
   }
+  getAllcategorie(){
+    return this.http.get(this.url+'/categorie/listercategorie');
+  }
 }

@@ -1,0 +1,44 @@
+<ion-content>
+    <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
+    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
+        <ion-list>
+            <ion-item>
+                <ion-label>Nom utilisateur</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Prenom utilisateur</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input type="email" placeholder="Adresse email" ngModel name="usermail"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Telephone</ion-label>
+                <ion-input type="text" placeholder="Adresse email" cols="30" ngModel name=" usermail " rows="5 "></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label>Quartier</ion-label>
+                <ion-input type="text" placeholder="Adresse email" cols="30" ngModel name=" usermail " rows="5 "></ion-input>
+            </ion-item>
+        </ion-list>
+        <p class="titre">Description</p>
+        <div id="message">
+            <textarea name="comments" rows="5" cols="30"></textarea>
+        </div>
+
+        <p id="buttons ">
+            <ion-button color="success" expand="block" shape="round">Envoyer</ion-button>
+        </p>
+    </form>
+
+</ion-content>
